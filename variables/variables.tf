@@ -12,16 +12,16 @@ variable "instance_type" {
     description = " This is the instance_typr of the ec2"
 }
 
-# variable "tags" {
-#     type= map 
-#     default = {
-#         Name = "backend"
-#         Project = "expense"
-#         Component = "backend"
-#         Environment = "DEV"
-#         Terraform   = "true"
-#     }
-# }
+variable "tags" {
+    type= map 
+    default = {
+        Name = "backend"
+        Project = "expense"
+        Component = "backend"
+        Environment = "DEV"
+        Terraform   = "true"
+    }
+}
 
 variable "sg_name"{
     default = "allow_ssssh"

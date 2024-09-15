@@ -27,7 +27,7 @@ variable "sg_name"{
     default = "allow_ssssh"
 }
 
-variable "sg_descripton" {
+variable "sg_description" {
     default = "Allow port number 22 for SSH access"
 }
 

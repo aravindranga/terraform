@@ -1,13 +1,13 @@
-resource "aws_instance" "terraform" {
+# resource "aws_instance" "terraform" {
 
-    ami = "ami-09c813fb71547fc4f"
-    instance_type = var.environment == "prod" ? "t3.medium":"t3.small"
-    vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
+#     ami = "ami-09c813fb71547fc4f"
+#     instance_type = var.environment == "prod" ? "t3.medium":"t3.small"
+#     vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
     
-    tags = {
-        Name = "terraform"
-    }
-}
+#     tags = {
+#         Name = "terraform"
+#     }
+# }
 
 resource "aws_security_group" "allow_ssh_terraform" {
     name        = "allow_ssssh" #allow_ssh is already there in my account
@@ -30,7 +30,7 @@ resource "aws_security_group" "allow_ssh_terraform" {
     }
 
     tags = {
-    Name = "allow_ssssh"
+    # Name = "allow_ssssh"
   }
 }
 

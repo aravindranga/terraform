@@ -1,18 +1,18 @@
-resource "aws_instance" "terraform" {
-    count=3
-    ami = "ami-09c813fb71547fc4f"
-    # instance_type = var.environment == "prod" ? "t3.medium":"t3.small"
-    # instance_type="t3.micro"
-    instance_type = count.index == 0 ? "t3.micro":"t3.small"
+# resource "aws_instance" "terraform" {
+#     count=3
+#     ami = "ami-09c813fb71547fc4f"
+#     # instance_type = var.environment == "prod" ? "t3.medium":"t3.small"
+#     # instance_type="t3.micro"
+#     instance_type = count.index == 0 ? "t3.micro":"t3.small"
 
 
-    vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
+#     vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
     
-    tags = {
-        Name = var.instance_names[count.index]
-    }
+#     tags = {
+#         Name = var.instance_names[count.index]
+#     }
             
-}
+# }
 
 resource "aws_security_group" "allow_ssh_terraform" {
     name        = "allow_ssssh" #allow_ssh is already there in my account
